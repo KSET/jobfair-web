@@ -19,14 +19,14 @@ class PersonManager(models.Manager):
         access_code = base62.encode(
                 int(hashlib.md5(first_name_last_name_email+salt), 16)
                 )
-        new_person= self.create(
+        new_person = self.create(
                 first_name=first_name, 
                 last_name=last_name,
                 email=email, 
                 access_code=access_code
                 )
         new_person.send_email()
-        return new_person_
+        return new_person
     
     create_person = transaction.commit_on_success(create_person)
 
@@ -47,7 +47,7 @@ class Person(models.Model):
                 self.email, fail_silently=False)
 
     def __unicode__(self):
-        return self.fist_name + " " + self.last_name + ", " + self.email
+        return self.first_name + " " + self.last_name + ", " + self.email
 
     class Meta():
         ordering = ['last_name', 'first_name', 'email']
@@ -56,7 +56,7 @@ class Person(models.Model):
 
 
 class PersonDetail(models.Model):
-    person = models.OneToOneField(Person)
+    person = models.ForeignKey(Person)
     phone_number = models.CharField(max_length=32, blank=True)
     address = models.CharField(max_length=256, blank=True)
     web_page = models.CharField(max_length=256, blank=True)
@@ -142,7 +142,7 @@ class Skills(models.Model):
 
 
 class Other(models.Model):
-    person = models.OneToOneField(Person)
+    person = models.ForeignKey(Person)
     about_yourself = models.TextField(blank=True)
     expectations = models.TextField(blank=True)
     prefered_job = models.TextField(blank=True)
