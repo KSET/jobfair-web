@@ -44,13 +44,22 @@ class User(models.Model):
         send_mail(subject, body, 'jobfair-zivotopisi@kset.org', 
                 self.email, fail_silently=False)
 
+    class Meta():
+        ordering = ['last_name', 'first_name', 'email']
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
+
 
 class UserDetail(models.Model):
-    user = models.ForeignKey(User)
+    user = models.OneToOne(User)
     phone_number = models.CharField(max_length=32, blank=True)
     address = models.CharField(max_length=256, blank=True)
     web_page = models.CharField(max_length=256, blank=True)
     date_of_birth = models.DateField(blank=True)
+
+    class Meta():
+        verbose_name = 'User detail'
+        verbose_name_plural = 'Users details'
 
 
 class Education(models.Model):
@@ -63,10 +72,18 @@ class Education(models.Model):
     # add possible titles, more research needed
     title = models.CharField(max_length=64)
 
+    class Meta():
+        verbose_name = 'Education'
+        verbose_name_plural = 'Education'
+
 
 class EducationActivities(models.Model):
     user = models.ForeignKey(User)
     activity = models.TextField()
+
+    class Meta():
+        verbose_name = 'Education activity'
+        verbose_name_plural = 'Education activities'
 
 
 class ForeignLanguage(models.Model):
@@ -76,10 +93,18 @@ class ForeignLanguage(models.Model):
     speaking = models.IntegerField(choices=SKILL_LEVEL)
     extra_notes = models.TextField(blank=True)
 
+    class Meta():
+        verbose_name = 'Foreign language'
+        verbose_name_plural = 'Foreign languages'
+
     
 class Experience(models.Model):
     user = models.ForeignKey(User)
     job = models.TextField()
+
+    class Meta():
+        verbose_name = 'Experience'
+        verbose_name_plural = 'Experiences'
 
 
 class Skills(models.Model):
@@ -87,9 +112,17 @@ class Skills(models.Model):
     skill = models.CharField(max_length=256)
     description = models.TextField()
 
+    class Meta():
+        verbose_name = 'Skill'
+        verbose_name_plural = 'Skills'
+
 
 class Other(models.Model):
-    user = models.ForeignKey(User)
+    user = models.OneToOne(User)
     about_yourself = models.TextField(blank=True)
     expectations = models.TextField(blank=True)
     prefered_job = models.TextField(blank=True)
+
+    class Meta():
+        verbose_name = 'Other'
+        verbose_name_plural = 'Others'
