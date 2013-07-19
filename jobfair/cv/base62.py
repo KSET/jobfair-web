@@ -25,4 +25,5 @@ def encode(integer, base=BASE_LIST):
 def pad(string, min_length=10):
     if len(string) < min_length:
         return string + hashlib.sha1(str((random.random()))).hexdigest()[:min_length-len(string)]
+    return string
 
