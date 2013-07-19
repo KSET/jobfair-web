@@ -47,10 +47,10 @@ class User(models.Model):
 
 class UserDetail(models.Model):
     user = models.ForeignKey(User)
-    phone_number = models.CharField(max_length=32)
-    address = models.CharField(max_length=256)
-    web_page = models.CharField(max_length=256)
-    date_of_birth = models.DateField()
+    phone_number = models.CharField(max_length=32, blank=True)
+    address = models.CharField(max_length=256, blank=True)
+    web_page = models.CharField(max_length=256, blank=True)
+    date_of_birth = models.DateField(blank=True)
 
 
 class Education(models.Model):
@@ -74,7 +74,7 @@ class ForeignLanguage(models.Model):
     language = models.CharField(max_length=32)
     reading = models.IntegerField(choices=SKILL_LEVEL)
     speaking = models.IntegerField(choices=SKILL_LEVEL)
-    extra_notes = models.TextField()
+    extra_notes = models.TextField(blank=True)
 
     
 class Experience(models.Model):
@@ -90,6 +90,6 @@ class Skills(models.Model):
 
 class Other(models.Model):
     user = models.ForeignKey(User)
-    about_yourself = models.TextField()
-    expectations = models.TextField()
-    prefered_job = models.TextField()
+    about_yourself = models.TextField(blank=True)
+    expectations = models.TextField(blank=True)
+    prefered_job = models.TextField(blank=True)
