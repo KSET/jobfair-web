@@ -56,7 +56,7 @@ class Person(models.Model):
 
 
 class PersonDetail(models.Model):
-    person = models.ForeignKey(Person)
+    person = models.OneToOneField(Person)
     phone_number = models.CharField(max_length=32, blank=True)
     address = models.CharField(max_length=256, blank=True)
     web_page = models.CharField(max_length=256, blank=True)
@@ -142,7 +142,7 @@ class Skills(models.Model):
 
 
 class Other(models.Model):
-    person = models.ForeignKey(Person)
+    person = models.OneToOneField(Person)
     about_yourself = models.TextField(blank=True)
     expectations = models.TextField(blank=True)
     prefered_job = models.TextField(blank=True)
