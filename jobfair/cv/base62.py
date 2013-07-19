@@ -1,4 +1,7 @@
 import string
+import random  
+import hashlib
+
 BASE_LIST = string.digits + string.letters
 BASE_DICT = dict((c, i) for i, c in enumerate(BASE_LIST))
 
@@ -17,4 +20,9 @@ def encode(integer, base=BASE_LIST):
         ret = base[integer % length] + ret
         integer /= length
 
-    return ret
+    return pad(ret)
+
+def pad(string, min_length=10):
+    if len(string) < min_length:
+        return string + hashlib.sha1(str((random.random()))).hexdigest()[:min_length-len(string)]
+
