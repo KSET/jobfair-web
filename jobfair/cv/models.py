@@ -17,7 +17,7 @@ class PersonManager(models.Manager):
     def create_person(self, first_name, last_name, email):
         salt = hashlib.sha1(str(random.random())).hexdigest()[:10]
         access_code = base62.encode(
-                int(hashlib.md5(first_name_last_name_email+salt), 16)
+                int(hashlib.sha1(first_name+last_name+email+salt).hexdigest(), 16)
                 )
         new_person = self.create(
                 first_name=first_name, 
@@ -44,7 +44,7 @@ class Person(models.Model):
         subject = ''.join(subject.splitlines())
         body = render_to_string('cv/email_body.txt', {'access_code': self.access_code})
         send_mail(subject, body, 'jobfair-zivotopisi@kset.org', 
-                self.email, fail_silently=False)
+                (self.email,), fail_silently=False)
 
     def __unicode__(self):
         return self.first_name + " " + self.last_name + ", " + self.email
