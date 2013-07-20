@@ -1,7 +1,10 @@
 from django.http import HttpResponse
+from django.template import RequestContext, loader
 
 def index(request):
-    return HttpResponse("CV INDEX PAGE")
+    template = loader.get_template('cv/index.html')
+    context = RequestContext(request, dict())
+    return HttpResponse(template.render(context))
 
 def new(request):
     return HttpResponse("NEW CV")
