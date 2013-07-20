@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
+from django.shortcuts import render
+import forms
 
 def index(request):
     template = loader.get_template('cv/index.html')
@@ -7,7 +9,9 @@ def index(request):
     return HttpResponse(template.render(context))
 
 def new(request):
-    return HttpResponse("NEW CV")
+    form = forms.PersonForm()
+    context = {'form': form}
+    return render(request, 'cv/new.html', context)
 
 def edit_profile(request, access_code="-1"):
     return HttpResponse("Editing CV with access code {}".format(access_code))
