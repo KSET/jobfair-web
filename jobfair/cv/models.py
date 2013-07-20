@@ -5,7 +5,6 @@ from django.db import models, transaction
 from django.utils import timezone
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
-from django.forms import ModelForm
 
 import base62
 
@@ -56,9 +55,6 @@ class Person(models.Model):
         verbose_name_plural = 'Persons'
 
 
-class PersonForm(ModelForm):
-    class Meta:
-        model = Person
 
 
 class PersonDetail(models.Model):
@@ -77,9 +73,6 @@ class PersonDetail(models.Model):
         verbose_name_plural = 'Person details'
 
 
-class PersonDetailForm(ModelForm):
-    class Meta:
-        model = PersonDetail
 
 
 class Education(models.Model):
@@ -100,9 +93,6 @@ class Education(models.Model):
         verbose_name_plural = 'Education'
 
 
-class EducationForm(ModelForm):
-    class Meta:
-        model = Education
 
 class EducationActivities(models.Model):
     person = models.ForeignKey(Person)
@@ -116,9 +106,6 @@ class EducationActivities(models.Model):
         verbose_name_plural = 'Education activities'
 
 
-class EducationActivitiesForm(ModelForm):
-    class Meta:
-        model = EducationActivities
 
 
 class ForeignLanguage(models.Model):
@@ -136,9 +123,6 @@ class ForeignLanguage(models.Model):
         verbose_name_plural = 'Foreign languages'
 
 
-class ForeignLanguageForm(ModelForm):
-    class Meta:
-        model = ForeignLanguage
 
     
 class Experience(models.Model):
@@ -153,9 +137,6 @@ class Experience(models.Model):
         verbose_name_plural = 'Experiences'
 
 
-class ExperienceForm(ModelForm):
-    class Meta:
-        model = Experience
 
 
 class Skills(models.Model):
@@ -171,9 +152,6 @@ class Skills(models.Model):
         verbose_name_plural = 'Skills'
 
 
-class SkillsForm(ModelForm):
-    class Meta:
-        model = Skills
 
 
 class Other(models.Model):
@@ -190,6 +168,3 @@ class Other(models.Model):
         verbose_name_plural = 'Others'
 
 
-class OtherForm(ModelForm):
-    class Meta:
-        model = Other
