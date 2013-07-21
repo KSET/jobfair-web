@@ -12,32 +12,18 @@ YEARS = map(lambda x: (x,x), reversed(range(1930, timezone.now().year)))
 YEARS.insert(0, (-1, 'U TIJEKU'))
 SKILL_LEVEL = map(lambda x: (x,x), range(1,11))
 
-class PersonManager(models.Manager):
-    
-    def create_person(self, first_name, last_name, email):
-        salt = hashlib.sha1(str(random.random())).hexdigest()[:10]
-        access_code = base62.encode(
-                int(hashlib.sha1(first_name+last_name+email+salt).hexdigest(), 16)
-                )
-        new_person = self.create(
-                first_name=first_name, 
-                last_name=last_name,
-                email=email, 
-                access_code=access_code
-                )
-        new_person.send_email()
-        return new_person
-    
-    create_person = transaction.commit_on_success(create_person)
-
-
 class Person(models.Model):
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
     email = models.EmailField(max_length=254, unique=True)
-    access_code = models.CharField(max_length=40)
+    access_code = models.CharField(max_length=40, editable=False)
 
-    objects = PersonManager()
+    def save(self, *args, **kwargs):
+        salt = hashlib.sha1(str(random.random())).hexdigest()[:10]
+        self.access_code = base62.encode(
+                int(hashlib.sha1(self.first_name+self.last_name+self.email+salt).hexdigest(), 16)
+                )
+        super(Person, self).save(*args, **kwargs)
 
     def send_email(self):
         subject = render_to_string('cv/email_subject.txt')
