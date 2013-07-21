@@ -9,8 +9,12 @@ def index(request):
     return HttpResponse(template.render(context))
 
 def new(request):
-    form = forms.PersonForm()
-    context = {'form': form}
+    context = dict()
+    form = forms.PersonForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        context['message'] = 'Thank you, your input has been saved.'
+    context['form'] = form
     return render(request, 'cv/new.html', context)
 
 def edit_profile(request, access_code="-1"):
