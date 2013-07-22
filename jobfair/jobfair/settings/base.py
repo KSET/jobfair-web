@@ -1,7 +1,10 @@
 from os.path import abspath, join, dirname
 import os
 
-PROJECT_DIR = abspath(join(dirname(__file__), '..'))
+ROOT_DIR = abspath(join(dirname(__file__), '..'))
+
+def ABS_PATH(*args):
+    return os.path.join(ROOT_DIR, *args)
 
 ADMINS = (
     ('Tomislav Maricevic', 'tmarice@kset.org'),
@@ -24,7 +27,7 @@ USE_TZ = True
 
 ROOT_URLCONF = 'jobfair.urls'
 
-STATIC_ROOT = join(PROJECT_DIR, 'static')
+STATIC_ROOT = join(ROOT_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
 )
@@ -34,11 +37,11 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-MEDIA_ROOT = join(PROJECT_DIR, 'media')
+MEDIA_ROOT = join(ROOT_DIR, 'media')
 MEDIA_URL = '/media/'
 
 TEMPLATE_DIRS = (
-    join(PROJECT_DIR, 'templates'),
+    join(ROOT_DIR, 'templates'),
 )
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
