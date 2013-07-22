@@ -17,8 +17,6 @@ DATABASES = {
     }
 }
 
-SECRET_KEY = 'i$cteu$9h8)l7_*_x8c$xt_q%$faa94-@-550)74ptsoo+2a0k'
-
 EMAIL_HOST = ''
 EMAIL_PORT = ''
 EMAIL_HOST_USER = ''

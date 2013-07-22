@@ -1,5 +1,7 @@
 *.pyc
 *.log
 *.swp
-production.py
+prod.py
+local.py
+secret.py
 notes

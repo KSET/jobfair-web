@@ -1,7 +1,5 @@
-import os
-
-if 'PROD' in os.environ:
-    from .production import *
-else:
+try:
     from .local import *
+except ImportError:
+    from .prod import *
 
