@@ -76,8 +76,6 @@ INSTALLED_APPS = (
     'cv',
     'media',
     'partners',
-    # maybe unnecessary
-    'archive',
 )
 
 def ensure_secret_key_file():
