@@ -1,25 +1,23 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, ValidationError
+from django.contrib.auth.models import User as AuthUser
 
 import models
 
-class PersonForm(ModelForm):
+class UserForm(ModelForm):
     class Meta:
-        model = models.Person
+        model = models.User
+        fields = ('first_name', 'last_name', 'email')
 
 
-class PersonDetailForm(ModelForm):
+class UserDetailForm(ModelForm):
     class Meta:
-        model = models.PersonDetail
+        model = models.UserDetail
+        exclude = ('user',)
 
 
 class EducationForm(ModelForm):
     class Meta:
         model = models.Education
-
-
-class EducationActivitiesForm(ModelForm):
-    class Meta:
-        model = models.EducationActivities
 
 
 class ForeignLanguageForm(ModelForm):
