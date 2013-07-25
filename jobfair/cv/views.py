@@ -11,7 +11,6 @@ def index(request):
     return HttpResponseRedirect(reverse('cv:new'))
 
 def new(request):
-    context = dict()
     userForm = forms.UserForm(request.POST or None)
     userDetailForm = forms.UserDetailForm(request.POST or None)
     educationFormSet = forms.educationFormSet(request.POST or None)
