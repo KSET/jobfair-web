@@ -1,13 +1,33 @@
-{% if message %} <p><strong> {{ message }} </strong></p>{% endif %}
+{% load staticfiles %}
+<html>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+                <title> Jobfair </title>
+                <script type="text/javascript"
+                        src="{{ STATIC_URL }}js/jquery.js">
+                </script>
+                <script type="text/javascript" src="{% static 'cv/dynamic_adding.js' %}">
+                </script>
+        </head>
+        <body>
 
-<form action="" method="post"> {% csrf_token %}
-        {{ user_form.as_p }}
-        {{ user_detail_form.as_p }}
-        {{ education_formset.management_form }}
-        {% for form in education_formset.forms %}
-        <div class="item">
-                {{ form.as_p }}
-        </div>
-        {% endfor %}
-        <input type="submit" value="submit" />
-</form>
+                {% if message %} <p><strong> {{ message }} </strong></p>{% endif %}
+
+                <form action="" method="post"> {% csrf_token %}
+                        <div class="user" style="border: 1px solid blue">
+                                {{ user_form.as_p }}
+                        </div>
+                        <div class="user_detail" style="border: 1px solid blue">
+                                {{ user_detail_form.as_p }}
+                        </div>
+                        {{ education_formset.management_form }}
+                        {% for form in education_formset.forms %}
+                        <div class="item" style="border: 1px solid blue">
+                                {{ form.as_p }}
+                        </div>
+                        {% endfor %}
+                        <p><a id="add" href="#"> Add another </a></p>
+                        <input type="submit" value="submit" />
+                </form>
+        </body>
+</html>
