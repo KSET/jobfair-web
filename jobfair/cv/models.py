@@ -8,8 +8,9 @@ from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.contrib.auth.models import User as AuthUser 
 
-YEARS = map(lambda x: (x,x), reversed(range(1930, timezone.now().year)))
-YEARS.insert(0, (-1, 'U TIJEKU'))
+YEARS_BEGIN = map(lambda x: (x,x), reversed(range(1930, timezone.now().year+1)))
+YEARS_END = map(lambda x: (x,x), reversed(range(1930, timezone.now().year+30)))
+YEARS_END.insert(0, (-1, 'U TIJEKU'))
 SKILL_LEVEL = map(lambda x: (x,x), range(1,11))
 
 class User(AuthUser):
@@ -56,8 +57,8 @@ class Education(models.Model):
     user = models.ForeignKey(User)
     # maybe change this to include choice option
     faculty = models.CharField(max_length=128)
-    start_date = models.CharField(max_length=4, choices=YEARS)
-    end_date = models.CharField(max_length=4, choices=YEARS)
+    start = models.IntegerField(choices=YEARS_BEGIN)
+    end = models.IntegerField(choices=YEARS_END)
     program = models.CharField(max_length=64)
     # add possible titles, more research needed
     title = models.CharField(max_length=64)
