@@ -28,7 +28,7 @@ def new(request):
             'skills_formset': skillsFormSet,
             'other_form': otherForm,
             }
-    valid_list = map(lambda x: x.is_valid(), context.itervalues())
+    valid_list = [x.is_valid(), context.itervalues()]
     if all(valid_list):
         user = userForm.save()
         user_detail = userDetailForm.save(commit=False)
