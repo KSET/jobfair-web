@@ -1,7 +1,7 @@
 *.pyc
 *.log
 *.swp
-prod.py
-local.py
-secret.py
+jobfair/jobfair/settings/prod.py
+jobfair/jobfair/settings/local.py
+jobfair/jobfair/settings/secret.py
 notes
