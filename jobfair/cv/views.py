@@ -1,14 +1,15 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
 
 import forms
 
 def index(request):
     if request.user.is_authenticated():
-        return HttpResponseRedirect(reverse('cv:edit'))
-    return HttpResponseRedirect(reverse('cv:new'))
+        return redirect(reverse('cv:edit'))
+    return redirect(reverse('cv:new'))
 
 def new(request):
     userForm = forms.UserForm(request.POST or None)
@@ -41,9 +42,8 @@ def new(request):
         context['message'] = 'Thank you, your input has been saved.'
     return render(request, 'cv/new.html', context)
 
+@login_required(login_url='/cv/login')
 def edit(request):
-    if request.user.is_authenticated():
-        return HttpResponse("Editing CV of a user {}".format(
-            request.user.username))
-    return HttpResponse("Need to log in")
+    return HttpResponse("Editing CV of a user {}".format(
+        request.user.username))
 
