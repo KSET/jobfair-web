@@ -27,7 +27,7 @@ USE_TZ = True
 
 ROOT_URLCONF = 'jobfair.urls'
 
-STATIC_ROOT = join(ROOT_DIR, 'static')
+STATIC_ROOT = ABS_PATH('static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
 )
@@ -37,11 +37,11 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-MEDIA_ROOT = join(ROOT_DIR, 'media')
+MEDIA_ROOT = ABS_PATH('media')
 MEDIA_URL = '/media/'
 
 TEMPLATE_DIRS = (
-    join(ROOT_DIR, 'templates'),
+   ABS_PATH('templates'),
 )
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
