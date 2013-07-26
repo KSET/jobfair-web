@@ -71,7 +71,6 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     'south',
-    'jquery',
 
     'news',
     'cv',
