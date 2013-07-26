@@ -16,7 +16,7 @@ SKILL_LEVEL = map(lambda x: (x,x), range(1,11))
 class User(AuthUser):
 
     def save(self, *args, **kwargs):
-        password = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(10))
+        password = User.objects.make_random_password()
         self.set_password(password)
         self.username = self.email
         super(User, self).save(*args, **kwargs)
@@ -45,7 +45,7 @@ class UserDetail(models.Model):
     date_of_birth = models.DateField(blank=True)
 
     def __unicode__(self):
-        return self.user.__unicode__() + ": detail"
+        return str(self.user) + ': detail'
 
 
     class Meta():
@@ -65,7 +65,7 @@ class Education(models.Model):
     extra_activities = models.TextField()
 
     def __unicode__(self):
-        return self.user.__unicode__() + ": " + self.faculty
+        return str(self.user) + self.faculty
 
     class Meta():
         verbose_name = 'Education'
@@ -80,7 +80,7 @@ class ForeignLanguage(models.Model):
     extra_notes = models.TextField(blank=True)
 
     def __unicode__(self):
-        return self.user.__unicode__() + ": " + self.language
+        return str(self.user) + self.language
 
     class Meta():
         verbose_name = 'Foreign language'
@@ -94,7 +94,7 @@ class Experience(models.Model):
     job = models.TextField()
 
     def __unicode__(self):
-        return self.user.__unicode__() + ": job"
+        return str(self.user) + ": job"
 
     class Meta():
         verbose_name = 'Experience'
@@ -109,7 +109,7 @@ class Skills(models.Model):
     description = models.TextField()
 
     def __unicode__(self):
-        return self.user.__unicode__() + ": " + self.skill
+        return str(self.user) + ": " + self.skill
 
     class Meta():
         verbose_name = 'Skill'
@@ -125,7 +125,7 @@ class Other(models.Model):
     prefered_job = models.TextField(blank=True)
 
     def __unicode__(self):
-        return self.user.__unicode__() + ": other"
+        return str(self.user) + ": other"
 
     class Meta():
         verbose_name = 'Other'
