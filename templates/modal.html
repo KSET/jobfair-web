@@ -1,0 +1,87 @@
+
+<div class="modal-container">
+    <div class="bg-hold" ng-click="close()"></div>
+    <div class="modal">
+        <div class="close-modal" ng-click="close()"><i class="fa fa-close"></i></div>
+        <div class="personal-holder">
+        <div class="name">
+            <h2><i class="fa fa-user"></i> {{cv.name}} {{cv.surname}}</h2>
+            <a href="">Izvezi životopis <i class="fa fa-file-pdf-o"></i></a>
+        </div>
+        <div class="personal-data">
+        <table>
+            <tr>
+                <td><i class="fa fa-map-marker"></i></td>
+                <td>{{cv.adress}}, {{cv.zip}} {{cv.city}}</td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-phone"></i></td>
+                <td>{{cv.phone}}</td>
+            </tr>
+             <tr>
+                <td><i class="fa fa-envelope"></i></td>
+                <td><a href="mailto:{{cv.email}}">{{cv.email}}</a></td>
+            </tr>
+               <tr>
+                <td><i class="fa fa-globe"></i></td>
+                <td><a href="{{cv.web}}" target="_blank">{{cv.web}}</a></td>
+            </tr>
+        </table>
+        <p>Datum rođenja: {{cv.birth}}</p>
+        </div>
+        </div>
+        <div class="edu-data">
+            <h2 id="obrazovanje"><i class="fa fa-graduation-cap"></i> Formalno obrazovanje</h2>
+            <table>
+                <tr ng-repeat="edu in cv.education track by $index">
+                    <td class="date-td">{{edu.from.day}}.{{edu.from.month}}.{{edu.from.year}}. - {{edu.to.day}}.{{edu.to.month}}.{{edu.to.year}}.</td>
+
+                    <td><b>{{edu.name}}</b></td>
+                    <td>-</td>
+                     <td>{{edu.year}}</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="edu-data">
+            <h2><i class="fa fa-briefcase"></i> Radno iskustvo</h2>
+            <table>
+                <tr ng-repeat="exp in cv.experience track by $index">
+                    <td class="date-td">{{exp.from.day}}.{{exp.from.month}}.{{exp.from.year}}. - {{exp.to.day}}.{{exp.to.month}}.{{exp.to.year}}.</td>
+
+                    <td><b>{{exp.title}} u {{exp.name}}</b></td>
+                    
+                     <td ng-bind-html="exp.description"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="edu-data">
+            <h2><i class="fa fa-comment"></i> Strani jezici</h2>
+            <table>
+                <tr ng-repeat="lan in cv.languages track by $index">
+                    <td><b>{{lan.name}}</b></td>
+                    <td class="date-td">{{lan.val.text}}</td>
+
+                    
+                  
+                </tr>
+            </table>
+        </div>
+        
+        <div class="edu-data">
+             <h2><i class="fa fa-laptop"></i> Računalne vještine</h2>
+            <div class="html-holder" ng-bind-html="cv.computerskills">
+                
+            </div>
+        </div>
+        
+        <div class="edu-data">
+             <h2><i class="fa fa-info"></i> Ostale vještine</h2>
+            <div class="html-holder" ng-bind-html="cv.otherskills">
+                
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
