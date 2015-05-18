@@ -22,8 +22,7 @@ blogApp.controller('BlogCtrl',
                     link: 'http://www2.deloitte.com/hr/hr.html'},
                     {name:'FINA', src:'img/logos/FINA.png', description: 'Financijska agencija (Fina) vodeća je hrvatska tvrtka na području financijskog posredovanja. Nacionalna pokrivenost, informatički sustav prokušan na najzahtjevnijim poslovima od nacionalne važnosti te visoka profesionalna razina stručnih timova omogućuju pripremu i provedbu različitih projekata, od jednostavnih financijskih transakcija do najsofisticiranijih poslova u elektroničkom poslovanju.',
                     link: 'http://www.fina.hr/Default.aspx'},
-                    {name:'Five', src:'img/logos/Five.png', description: '',
-                    link: 'http://five.agency/'},
+                    
                     {name:'HRCloud', src:'img/logos/HRCloud.png', description: "Tvrtka HR Cloud (Human Resources Cloud) je prije dvije godine osnovana u Splitu kao podružnica američke tvrtke Neogov iz Los Angelesa. Na matičnom američkom tržištu Neogov uspješno posluje već 15 godina sa  preko 1200 enterprise kijenata.  Poslovanje tvrtke je od samog početka temeljeno na SaaS modelu. U HR Cloudu u Hrvatskoj nudimo priliku za rad na modernim produktima za svjetsko tržište u Human Resources domeni. Sudjelovanje na projektima omogućava suradnju s vrhunskim stručnjacima, mogućnost putovanja i usavršavanja u SAD-u. U Splitu, već sada, naše proizvode stvara preko 20 entuzijastičnih, iskusnih i nabrijanih programera, testera, dizajnera i voditelja projekata.",
                     link: 'http://hrcloud.com/'},
                     {name:'Inetndanet', src:'img/logos/Inetndanet.png', description: 'INTENDA NET je brzorastuća IT tvrtka iz Zagreba koja se bavi razvojem vlastitih softverskih rješenja. Dio smo Recro-net grupacije, uspješno poslujemo te plasiramo naše proizvode i rješenja na međunarodnom tržištu. Potencijalnim zaposlenicima možemo ponuditi odličnu radnu atmosferu, izazovan posao, rad u dinamičnom okruženju sa internacionalnim korisnicima, priliku za osobni i profesionalni razvoj. Više informacija o tvrtci INTENDA NET saznajte na http://www.intendanet.hr.',
@@ -32,19 +31,23 @@ blogApp.controller('BlogCtrl',
                     link: 'https://www.infinum.co/'},
                     {name:'Infobip', src:'img/logos/Infobip.png', description: 'Internacionalna smo IT kompanija, usmjerena na razvoj in-house proizvoda u svijetu mobilnih tehnologija. Na taj način uspjeli smo u manje od 10 godina izgraditi jednu od najvećih messaging platformi s više od 150.000 klijenata iz cijelog svijeta. Ustvari, postoji znatna vjerojatnost da si i sam/a primio/la poruku putem naše platforme, s obzirom da naše tehnologije dosežu trećinu svjetske populacije! Kako bismo uvijek išli ukorak s tržištem, u 34 ureda diljem svijeta zapošljavamo više od 600 znatiželjnih, strastvenih Infobipovaca, što nas čini trenutno najvećom hrvatskom IT kompanijom.',
                     link: 'http://www.infobip.com/'},
+                     {name:'IN2', src:'img/logos/IN2.png', description: 'IN2 je osnovan 1992. godine u Zagrebu, a danas je s 12 vlasnički povezanih tvrtki vodeća softverska grupacija u SEE regiji. IN2 grupa je IT rješenjima prisutna u javnom sektoru i upravi, zdravstvu, financijskom sektoru i osiguranju, telekomunikacijama, maloprodaji i veleprodaji, industriji, komunalnim poduzećima i energetici. Svoj uspjeh IN2 prvenstveno temelji na stručnom, iskusnom i ponajprije motiviranom zaposleniku. Vlastiti edukacijski centar za pripravnike, složeni projekti i kontinuirano ulaganje u znanje neka su od obilježja prepoznatljive korporativne kulture koja je temelj stabilnog razvoja kompanije. Danas IN2 grupa zapošljava preko 500 zaposlenika i planira daljnji rast.',
+                    link: 'http://www.in2.hr/'},
                     {name:'i-Ways', src:'img/logos/i-Ways.png', description: 'Povijest i-Waysa počinje u Berlinu 1999. Od tada poduzeće i-Ways je naraslo do vodeće pozicije među pružateljima eCommerce riješenja. Razvili smo se internacionalni tim profesionalaca sa referncama u eCommercu, tehnologiji, razvoju softwaera i online marketinga. Trenutno poslujemo iz 4 ureda Njemačka, Atlanta, Hrvatska i Velika Britanija. i-Ways je sinonim za inovatino, integrirano i međunarodno. To je pristup koji smo izabrali pri pružanju najboljih mogućih usluga i tehnologija našim klijentima i partnerima. Osnovana kao tvrtka koja pruža inovativne usluge, uspješno implementiramo eCommerce i tehnološka riješenja za naše klijente te smo uključni u međunarodnu i multi-channel prodaju. Iskutsvo u industriji, znanje i vještine našeg osoblja kao i kontinuirani prijenos najnovije tehnologije našim partnerima i klijentima je ono što nas održava na vodećoj poziciji na tržištu.',
                     link: 'http://www.i-ways.hr/'},
                     {name:'Jungheinrich', src:'img/logos/Jungheinrich.png', description: 'Jungheinrich Systemloesungen develops and provides innovative solutions for warehouse management and warehouse automation. As a company of the internationally active Jungheinrich group with 12,000 employees we ensure that every day millions of goods are transported from logistics centers to the customers as fast as possible. So far, we have successfully completed projects for more than 100,000 customers from all over the world. From optimising existing systems to planning completely new systems to the implementation of the software and successful handover we put in every effort to meet the  customer\'s requirements.',
                     link: 'http://www.jungheinrich.com/'},
                     {name:'Microsoft', src:'img/logos/Microsoft.png', description: "Software engineers at Microsoft are passionate about building technologies that make the world a better place. At Microsoft, you will collaborate with a team of programming experts to solve problems and build some of the world’s most advanced services and devices. Your efforts on the design, development, and testing of next-generation applications will have an impact on millions of people. You are the link between abstract concepts and delivered solutions. Understanding the consumer, solving problems, and building applications that will impact millions of people.",
                     link: 'https://www.microsoft.com/hr-hr/default.aspx'},
+                    {name:'mStart', src:'img/logos/mStart.png', description: 'mStart d.o.o., članica Agrokor koncerna, čija uloga je pružanja vrhunskih usluga u području IT-a svim članicama Agrokor koncerna. Zapošljavamo preko 150 visoko specijaliziranih stručnjaka što  mStart d.o.o. svrstava među vodeće kompanije u području IT usluga u Hrvatskoj. Kroz ključna partnerstva i suradnju sa svjetskim liderima u području poslovnih aplikacija i IT infrastrukture naši zaposlenici imaju prilike raditi na  najrecentnijim i najinovativnijim svjetskim tehnologijama kako bi mogli odgovoriti na najzahtjevnije izazove različitih industrija što nas ujedno i specijalizira za pružanje usluga dodane vrijednosti na tržištu regije.',
+                    link: 'http://www.agrokor.hr/hr/kompanije/mstart-d-o-o/'},
                     {name:'Nanobit', src:'img/logos/Nanobit.png', description: 'Osnovana 2008., Nanobit je tvrtka specijalizirana za razvoj zaraznih igara visoke kvalitete i najveći je game development studio u Hrvatskoj, s fokusom na casual gaming. Projekte razvijaju isključivo prema vlastitim idejama i plasiraju na međunarodno tržište (te se tako od kreativnosti osnivača i želje za stvaranjem firme u kakvoj bi i sami htjeli raditi razvio Nanobit u današnjem obliku). Radeći u skladu s motom “Crafting bits of fun”, zahvaljujući motivaciji i vještinama sad već skoro 60-članog tima, iza njih su deseci popularnih igara i aplikacija, kao i plasman među top 15 tehnoloških tvrtki s najbržim rastom u Srednjoj Europi te nagrada za EY Poduzetnika godine. Uz uspjeh projekata, na prvom mjestu im je zadovoljstvo zaposlenika i ugodna radna atmosfera, što je sigurno doprinijelo dobivanju priznanja za jednog od Top 3 Najbolja poslodavca u Hrvatskoj 2014., prema istraživanju portala MojPosao',
                     link: 'http://www.nanobit.co/'},
                     {name:'StudentID', src:'img/logos/StudentID.png', description: 'STUDENT ID je program za studente na završnim godinama fakulteta, koji Vam omogućuje da bolje upoznate svoj potencijal, talente, interese, vrijednosti i vještine kao temelj za kvalitetno biranje karijere. Ukratko, što Vam je važno da se osjećate ostvareno i zadovoljno u poslu i van posla. Kroz cijeli program usmjeravamo se na autentičnost studenata kao kandidata za posao te ih potičemo da na se na temelju toga izdvajaju u moru ostalih tražitelja poslova.Ako ste autentični, nemate konkurenciju!',
                     link: ''},
                     {name:'Styria', src:'img/logos/Styria.png', description: 'Styria INTERNATIONAL unutar odjela digitalnog razvoja okuplja najbolje hrvatske web developere, frontend developere i mobile developere s puno iskustva u radu na portalima i aplikacijama za portale. Rad s najmodernijim web i mobile tehnologijama omogućuje nam da uvijek budemo korak ispred tržišta i pratimo najnovije trendove. Odjel digitalnog razvoja povezan je s kompanijama koje pripadaju Styriji Media Group AG iz Austrije specijaliziran za razvoj i održavanje novih portala, mobilnih verzija tih portala i mobilnih aplikacija te intenzivno radi i na internacionalnim projektima.',
                     link: 'http://www.styria.com/en/home'},
-                    {name:'Talentarium', src:'img/logos/Talentarium.png', description: '',
+                    {name:'Talentarium', src:'img/logos/Talentarium.png', description: 'Što nakon fakulteta? I tebi se vrti po glavi odlazak u inozemstvo? Nisi siguran je li bolja opcija odlazak ili ostanak u Hrvatskoj? Posao tijekom faksa ili dobre ocjene? Hackatoni ili dobra ljetna praksa? Velike ili male firme? Gdje ćeš više naučiti? Koje se tehnologije traže? Sve odgovore na vječna pitanja, ali i ono najvažnije - što je za TVOJ razvoj karijere najvažnije - pronađi na našem štandu, kod svojeg Talentarium konzultanta.',
                     link: 'http://www.talentarium.hr/'},
                     {name:'Talentor', src:'img/logos/Talentor.png', description: 'Talentor Hrvatska dio je međunarodne Talentor grupe specijalizirane za usluge posredovanja pri zapošljavanju, headhuntinga i HR savjetovanja. Naša snaga su preko 110 konzultanata u više od 14 zemalja u Europi. Pružamo niz usluga iz područja upravljanja ljudskim resursima: predselekcija i selekcija, psihologijsko testiranje, headhunting, outplacement program, centar za procjenu, istraživanje radne klime, eRecruiter (software za upravljanje kandidatima) te HR savjetovanje.',
                     link: 'http://talentor.com/'},
@@ -65,4 +68,27 @@ blogApp.controller('BlogCtrl',
        })
    
   }
+  
+  $scope.timetable = [{name:'Prvi dan', times: [{name: 'Irish Recruiter', time: '09-10', link:''},
+                                        {name: 'Trikoder', time: '10-11', link:''},
+                                        {name: 'Acceleratio', time: '11-12', link:''},
+                                        {name: 'Apis IT', time: '12-13', link:''},
+                                        {name: 'FINA', time: '13-14', link:''},
+                                        {name: 'Deloitte', time: '14-15', link:''},
+                                        {name: 'NANOBIT', time: '15-16', link:''}
+                                        
+                                        ]},
+                      {name:'Drugi dan', times: [{name: 'CETITEC', time: '09-10', link:''},
+                                        {name: 'HR Cloud', time: '10-11', link:''},
+                                        {name: 'Pet Minuta', time: '11-12', link:''},
+                                        {name: 'Styria', time: '12-13', link:''},
+                                        {name: 'Microsoft', time: '13-14', link:''},
+                                        {name: 'Edukator ID', time: '14-15', link:''},
+                                        {name: 'i-Ways', time: '15-16', link:''},
+                                        {name: 'Zagrebačka banka', time: '16-17', link:''},
+                                        {name: 'Infinum', time: '17-18', link:''},
+                                        {name: 'IN2 grupa', time: '18-19', link:''}
+                                        
+                                        ]}]
+  
   });

@@ -1,37 +1,45 @@
 <html>
     <head>
-        <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+		<title>Jobfair 2015</title>
+		<meta name="description"
+      content="Job Fair je sajam poslova koji već godinama organiziraju Savez studenata FER-a i KSET. Svim studentima tehnoloških fakulteta pružamo uvid u mogućnosti zaposlenja i razvoja karijere, a tvrtkama koje traže takve radnike omogućavamo izravan kontakt s njihovim budućim zaposlenicima.">
+        <meta name="author" content="KSET">
+		<meta name="keywords" content="Jobfair, FER, KSET, sajam, posao, poslova, 2015">
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,300italic,400italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="style/css/jobfair.css"> 
     </head>
-    <body class="home">
+    <body class="home" ng-app="blogApp">
         <div class="header">
             <div class="inner-header">
                 <div class="logo-container">
-                    <!--img class="logo-img" src="style/img/logo-sm.png"-->
-                    <h1 class="logo-h">JobFair</h1>
+                    <!--img src="style/img/JobFair_logo.png" height="26"-->
+                    <a href="/"><h1 class="logo-h">JobFair</h1></a>
                 </div>
                 
                   <div class="social-container">
-                    <a href=""><img src="style/img/yt.png"></a>
-                   <a href=""><img src="style/img/fb.png"></a>
-                   <a href=""><img src="style/img/tw.png"></a>
+                    <a href="https://www.youtube.com/user/KlubKSET" target="_blank"><img src="style/img/yt.png"></a>
+                   <a href="https://www.facebook.com/events/1453157368311006/" target="_blank"><img src="style/img/fb.png"></a>
+                   <a href="https://twitter.com/JobFair_2011?lang=en" target="_blank"><img src="style/img/tw.png"></a>
                 </div>
                 
                 <div class="option-container">
                     <ul>
-                        <li class="addcv">
+                        <!--li class="addcv">
                             <a href="">predaj životopis</a>
-                        </li>
-                        <li>
+                        </li-->
+                        <!--li>
                             <a href="">Za poslodavce</a>
-                        </li>
+                        </li-->
                         
                          <li>
-                            <a href="">Sudionici</a>
+                            <a href="sudionici.php">Sudionici</a>
                         </li>
-                         <li>
+                         <!--li>
                             <a href="">Blog</a>
+                        </li-->
+						 <li>
+                            <a href="/">Glavna</a>
                         </li>
                     </ul>
                 </div>
@@ -40,11 +48,16 @@
             </div>
         </div>
         <div class="blue-block">
+			<div class="banner-bg"></div>
             <div class="content">
+				
+				<div class="banner-container">
+					
+				</div>
              <div class="left-content">
-                <!--img src="style/img/logo.png"-->
-                <h1 class="page-header">JobFair 2015.</h1>
-                <p class="white-text">20. i 21. svibnja 2015. — Fakultet elektrotehnike i računarstva</p>
+                <!--img src="style/img/JobFair_logo.png" height="100"-->
+                <!--h1 class="page-header">JobFair 2015.</h1-->
+               
                 <a href="" class="apply-box">predaj životopis</a>
                 <div class="text">
                 <p>
@@ -61,90 +74,21 @@
             
         <div class="right-content">
                 
-        <div class="timetable">
+        <div class="timetable" ng-controller="BlogCtrl">
             <h2>Termini prezentacija</h2>
-	    <h3>20. Svibnja. - utorak</h3>
-            <table class="times">
+			<div ng-repeat="day in timetable" class="time-holder">
+            <h3>{{day.name}}</h3>
+			<table class="times">
                 <tbody>
-		    <tr>
-		    <td>10:15</td>
-		    <td><a href="">Styria</a></td>
-		  </tr>
-		  <tr>
-		    <td>11:15</td>
-		    <td><a href="">Talentor</a></td>
-		  </tr>
-		  <tr>
-		    <td>12:15</td>
-		    <td><a href="">Ericsson</a></td>
-		  </tr>
-		  <tr>
-		    <td>13:15</td>
-		    <td><a href="">Infobip</a></td>
-		  </tr>
-		  <tr>
-		    <td>14:15</td>
-		    <td><a href="">Trikoder</a></td>
-		  </tr>
-		  
-		  <tr>
-		    <td>15:15</td>
-		    <td><a href="">Asseco See</a></td>
-		  </tr>
-		  
-		 <tr>
-		    <td>16:15</td>
-		    <td><a href="">FER</a></td>
-		  </tr>
-
-		</tbody>
+					
+		    <tr ng-repeat="time in day.times">
+		    <td>{{time.time}}</td>
+		    <td><a href="{{time.link}}">{{time.name}}</a></td>
+			</tr>
+		 
+			</tbody>
             </table>
-	    
-	    <h3>21. Svibnja. - srijeda</h3>
-            <table class="times">
-                <tbody>
-		     <tr>
-		    <td>09:30</td>
-		    <td><a href="">Pet minuta</a></td>
-		  </tr>
-		    <tr>
-		    <td>10:15</td>
-		    <td><a href="">Apis IT</a></td>
-		  </tr>
-		  <tr>
-		    <td>11:15</td>
-		    <td><a href="">FINA</a></td>
-		  </tr>
-		  <tr>
-		    <td>12:15</td>
-		    <td><a href="">HR Cloud</a></td>
-		  </tr>
-		  <tr>
-		    <td>13:15</td>
-		    <td><a href="">mStart/Agrokor</a></td>
-		  </tr>
-		  <tr>
-		    <td>14:15</td>
-		    <td><a href="">Degordian</a></td>
-		  </tr>
-		  <tr>
-		    <td>15:15</td>
-		    <td><a href="">Infinum</a></td>
-		  </tr>
-		 <tr>
-		    <td>16:15</td>
-		    <td><a href="">Vipnet</a></td>
-		  </tr>
-		 <tr>
-		    <td>17:15</td>
-		    <td><a href="">IN2</a></td>
-		  </tr>
-		 <tr>
-		    <td>18:15</td>
-		    <td><a href="">Priprema za (inozemno) tržište rada</a></td>
-		  </tr>
-		</tbody>
-            </table>
+			</div>
         </div>
                 
             </div>
@@ -157,7 +101,9 @@
                     
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
-		<script src="js/jobfair/blogmodule.js"></script>
-		<script src="js/jobfair/cvmodule.js"></script>
+        <script src="js/vendors/angular-modal-service.js"></script>
+        <script src="js/jobfair/module/blogmodule.js"></script>
+        <script src="js/jobfair/svc/blogsvc.js"></script>
+        <script src="js/jobfair/ctrl/blogctrl.js"></script>
     </body>
 </html>
